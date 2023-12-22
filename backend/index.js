@@ -11,10 +11,8 @@ app.get('/', (request, response) => {
   return response.status(201).send('Welcome to Twitter')
 });
 
-app.listen(PORT, () => {
-  console.log(`App is listening to port: ${PORT}`);
-})
-
+// parsing request
+app.use(express.json());
 
 mongoose
 .connect(mongoURL)
