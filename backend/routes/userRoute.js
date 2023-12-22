@@ -26,5 +26,20 @@ router.post('/signup', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
+router.post('/login', async (request, response) => {
+  try {
+    const { username, password } = request.body;
+    const user = await User.findOne({ username });
+
+    if (!user || user.password !== password) {
+      return response.status(401).json({ error: 'Invalid username or password' });
+    }
+
+    response.status(200).json({ message: 'Login successful' });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 export default router;
