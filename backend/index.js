@@ -20,6 +20,11 @@ mongoose
 .connect(mongoURL)
 .then(() => {
     console.log('Server is connected to database');
+    app.listen(PORT, () => {
+      console.log(`App is listening to port: ${PORT}`);
+    })
+    // put 'app.listen' method inside .then()" 
+    // for xerver to run if db isconecteed
 })
 .catch((error) => {
     console.log(error);
