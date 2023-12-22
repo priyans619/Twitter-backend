@@ -2,6 +2,7 @@ import express from 'express';
 
 import { PORT, mongoURL } from './config.js';
 import mongoose from 'mongoose';
+import userRoute from './routes/userRoute.js';
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.get('/', (request, response) => {
 
 // parsing request
 app.use(express.json());
+
+// 
+app.use('/user', userRoute);
 
 mongoose
 .connect(mongoURL)
