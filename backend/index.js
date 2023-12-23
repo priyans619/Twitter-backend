@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import userRoute from './routes/userRoute.js';
 import messageRoutes from './routes/messageRoutes.js';
 import followRoute from './routes/followRoute.js';
+import feedRoute from './routes/feedRoute.js'
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use('/user', userRoute);
 app.use('/message', messageRoutes)
 app.use('/follow', followRoute)
-
+app.use('/feed', feedRoute)
 mongoose
 .connect(mongoURL)
 .then(() => {
