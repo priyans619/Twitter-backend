@@ -4,6 +4,7 @@ import { PORT, mongoURL } from './config.js';
 import mongoose from 'mongoose';
 import userRoute from './routes/userRoute.js';
 import messageRoutes from './routes/messageRoutes.js';
+import followRoute from './routes/followRoute.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 // Middleware
 app.use('/user', userRoute);
 app.use('/message', messageRoutes)
+app.use('/follow', followRoute)
 
 mongoose
 .connect(mongoURL)
