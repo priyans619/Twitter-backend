@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import { User } from "../models/userModel.js";
 import { Message } from "../models/messageModel.js";
+import { Follower } from '../models/followModel.js';
 
 router.post('/post-message', async (request, response) => {
   try {
@@ -18,6 +19,14 @@ router.post('/post-message', async (request, response) => {
 
     user.messages.push(newMessage._id);
     await user.save();
+
+     // the message will sent to followers feed
+     const followers = await Follower.find({ followee: user._id });
+     followers.forEach(async (follower) => {
+       const followerUser = await User.findById(follower.follower);
+       followerUser.messages.push(newMessage._id);
+       await followerUser.save();
+     });
 
     response.status(201).json({ message: 'Message posted successfully' });
   } catch (error) {
