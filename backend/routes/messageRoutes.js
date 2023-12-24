@@ -28,7 +28,15 @@ router.post('/post-message', async (request, response) => {
        await followerUser.save();
      });
 
-    response.status(201).json({ message: 'Message posted successfully' });
+    response.status(201).json({
+       message: 'Message posted successfully',
+       tweet: {
+        id: newMessage._id,
+        content: newMessage.userMessage,
+        author: username,
+       }
+      });
+      
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: 'Internal Server Error' });
