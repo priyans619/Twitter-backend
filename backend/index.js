@@ -1,6 +1,5 @@
 import express from 'express';
-
-import { PORT, mongoURL } from './config.js';
+import dotenv  from 'dotenv';
 import mongoose from 'mongoose';
 import userRoute from './routes/userRoute.js';
 import messageRoutes from './routes/messageRoutes.js';
@@ -8,6 +7,9 @@ import followRoute from './routes/followRoute.js';
 import feedRoute from './routes/feedRoute.js'
 
 const app = express();
+
+// for loading process.env from config
+dotenv.config();
 
 // creating server route 
 app.get('/', (request, response) => {
@@ -23,14 +25,13 @@ app.use('/user', userRoute);
 app.use('/message', messageRoutes)
 app.use('/follow', followRoute)
 app.use('/feed', feedRoute)
+
 mongoose
-
-
-.connect(mongoURL)
+.connect(process.env.mongoURL)
 .then(() => {
     console.log('Server is connected to database');
-    app.listen(PORT, () => {
-      console.log(`App is listening to port: ${PORT}`);
+    app.listen(process.env.PORT, () => {
+      console.log(`App is listening to port: ${process.env.PORT}`);
     })
     // put 'app.listen' method inside .then()" 
     // for xerver to run if db isconecteed
