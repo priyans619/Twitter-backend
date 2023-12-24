@@ -22,7 +22,15 @@ router.post('/follow-user', async (request, response) => {
       await newFollower.save();
     }
 
-    response.status(200).json({ message: 'User followed successfully' });
+    response.status(200).json({ 
+      message: 'User followed successfully',
+      Result: {
+        detail: `${followerUsername} followed ${followeeUsername}`,
+        followerId: follower._id,
+        followeeId: followee._id
+      }
+       
+    });
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: 'Internal Server Error' });
