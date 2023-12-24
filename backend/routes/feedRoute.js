@@ -1,13 +1,13 @@
-import express, { response } from "express";
+import express from "express";
 const router = express.Router();
 import { User } from "../models/userModel.js";
 import { Message } from "../models/messageModel.js";
 import { Follower } from "../models/followModel.js";
 
 
-router.get('/GetMyFeed/:username', async (req, res) => {
+router.get('/GetMyFeed/:username', async (request, response) => {
   try {
-    const { username } = req.params;
+    const { username } = request.params;
 
     const user = await User.findOne({ username })
     .populate({
@@ -45,4 +45,3 @@ router.get('/GetMyFeed/:username', async (req, res) => {
 
 
 export default router;
-
