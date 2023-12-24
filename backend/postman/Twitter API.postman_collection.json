@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "82de467d-186a-428d-ae6b-4b6250f03fbf",
+		"name": "Twitter API",
+		"description": "Twitter API endpoints-\n\n[http://localhost:3030/user/signup](http://localhost:3030/user/signup)\n\n[http://localhost:3030/user/login](http://localhost:3030/user/login)\n\n[http://localhost:3030/message/post-message](http://localhost:3030/message/post-message)\n\n[http://localhost:3030/follow/follow-user](http://localhost:3030/follow/follow-user)\n\n[http://localhost:3030/feed/GetMyFeed/:username](http://localhost:3030/feed/GetMyFeed/Newuser1)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31687432"
+	},
+	"item": [
+		{
+			"name": "signUp1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser1\",\r\n  \"password\": \"pass1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"user",
+						"signup"
+					]
+				},
+				"description": "First user signup"
+			},
+			"response": []
+		},
+		{
+			"name": "signUp2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser2\",\r\n  \"password\": \"pass1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"user",
+						"signup"
+					]
+				},
+				"description": "Second user signup"
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser1\",\r\n  \"password\": \"pass1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"user",
+						"login"
+					]
+				},
+				"description": "first user login"
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser2\",\r\n  \"password\": \"pass1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"user",
+						"login"
+					]
+				},
+				"description": "Second user login"
+			},
+			"response": []
+		},
+		{
+			"name": "message/Newuser1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser1\",\r\n  \"userMessage\": \"With great power comes great responsibility\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/message/post-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"message",
+						"post-message"
+					]
+				},
+				"description": "First messsage from first-user"
+			},
+			"response": []
+		},
+		{
+			"name": "message2/Newuser1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser1\",\r\n  \"userMessage\": \"The hardest choices require strongest wills\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/message/post-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"message",
+						"post-message"
+					]
+				},
+				"description": "Second message from frist-user"
+			},
+			"response": []
+		},
+		{
+			"name": "message/Newuser2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser2\",\r\n  \"userMessage\": \"This is the fight of our lives, and we're going to win\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/message/post-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"message",
+						"post-message"
+					]
+				},
+				"description": "First message from Second-user"
+			},
+			"response": []
+		},
+		{
+			"name": "message2/Newuser2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Newuser2\",\r\n  \"userMessage\": \"We never lose our demons\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/message/post-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"message",
+						"post-message"
+					]
+				},
+				"description": "Second message from Second-user"
+			},
+			"response": []
+		},
+		{
+			"name": "follow-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"followerUsername\": \"Newuser1\",\r\n  \"followeeUsername\": \"Newuser2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/follow/follow-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"follow",
+						"follow-user"
+					]
+				},
+				"description": "First-user (Newuser1) followed Second-user(Newuser2)"
+			},
+			"response": []
+		},
+		{
+			"name": "feed/GetMyFeed/Newuser1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/feed/GetMyFeed/Newuser1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"feed",
+						"GetMyFeed",
+						"Newuser1"
+					]
+				},
+				"description": "Newuser1 folllowed Newuser2, therefore Newuser1 will retrieve message from other follower also"
+			},
+			"response": []
+		},
+		{
+			"name": "feed/GetMyFeed/Newuser2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/feed/GetMyFeed/Newuser2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"feed",
+						"GetMyFeed",
+						"Newuser2"
+					]
+				},
+				"description": "Since Newuser2 is not following Newuser1 , therefore only Newuser2 message is retrieved"
+			},
+			"response": []
+		}
+	]
+}
