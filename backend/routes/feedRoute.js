@@ -28,7 +28,12 @@ router.get('/GetMyFeed/:username', async (request, response) => {
     const followingUsers = (await Follower.find({ follower: user._id })).map(f => f.followee);
 
     // Fetch messages from those users
-    const followingMessages = await Message.find({ user: { $in: followingUsers } });
+    const followingMessages = await Message.find({ author: { $in: followingUsers } })
+    .populate({
+      path: 'author',
+      model: 'User',
+      select: 'username'
+    });
 
     // Combine user's messages with following users' messages
     const allMessages = user.messages.concat(followingMessages);
