@@ -18,12 +18,14 @@ app.get('/', (request, response) => {
 // parsing request
 app.use(express.json());
 
-// Middleware
+// Middleware for all Routes
 app.use('/user', userRoute);
 app.use('/message', messageRoutes)
 app.use('/follow', followRoute)
 app.use('/feed', feedRoute)
 mongoose
+
+
 .connect(mongoURL)
 .then(() => {
     console.log('Server is connected to database');
